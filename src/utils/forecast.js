@@ -20,7 +20,9 @@ const forecast = (address, callback) => {
       callback(undefined, {
         response: `It is currently ${temperature} degrees out. There is a ${precip}% chance of rain`,
         location: response.body.request.query,
-        detail: response.body.error
+        latitude: response.body.location.lat,
+        longitude: response.body.location.lon,
+        time: response.body.current.observation_time,
       })
     }
   })

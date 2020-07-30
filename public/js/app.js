@@ -2,7 +2,15 @@ const weatherForm = document.querySelector('form');
 let address = document.getElementById('input');
 let messageOne = document.querySelector('#message-1');
 let messageTwo = document.querySelector('#message-2');
+let info = document.getElementById('search-info')
+let region = document.querySelector('#region');
+let latitude = document.querySelector('#lat');
+let longitude = document.querySelector('#lon');
+let time = document.querySelector('#time');
 
+(function() {
+  info.setAttribute('style', 'display:none')
+}())
 
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -19,8 +27,13 @@ weatherForm.addEventListener('submit', (e) => {
       return messageOne.textContent = res.error
     }else {
       messageOne.textContent = res.Data;
-      messageTwo.textContent = res.Location;
+      region.textContent = res.Location
+      latitude.textContent = res.latitude;
+      longitude.textContent = res.longitude;
+      time.textContent = res.time
     }
+
+    info.setAttribute('style', 'display:flex')
     })
   })
 

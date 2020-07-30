@@ -56,3 +56,7 @@ button {
   outline: none;
   cursor: pointer;
 }
+
+#search-info span{
+  margin: 10px;
+}
