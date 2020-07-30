@@ -30,14 +30,14 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: "About us",
+    title: "About",
     name: "Akunne Pascal"
   })
 });
 
 app.get('/help', (req, res) => {
   res.render('help', {
-    message: 'We are here to help',
+    message: 'Simply enter your location in the text field provided at the home page and click on the "Search" button to get your weather data',
     title: "Help",
     name: "Akunne Pascal"
   })
@@ -48,18 +48,6 @@ app.get('/help/*', (req, res) => {
     error: "Help page not found"
   })
 })
-
-// app.get('/products', (req, res) => {
-//   if(!req.query.search) {
-//     return res.send({
-//       error: "You must provide a search term"
-//     })
-//   }
-//   console.log(req.query.search)
-//   res.send({
-//     products: []
-//   })
-// })
 
 app.get('/weather', (req, res) => {
 
