@@ -8,12 +8,15 @@ let latitude = document.querySelector('#lat');
 let longitude = document.querySelector('#lon');
 let time = document.querySelector('#time');
 
-(function() {
+function infoAttr (){
   info.setAttribute('style', 'display:none')
-}())
+}
+infoAttr()
 
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  infoAttr()
 
   let location = address.value
   messageOne.textContent = 'Loading...'
@@ -31,9 +34,10 @@ weatherForm.addEventListener('submit', (e) => {
       latitude.textContent = res.latitude;
       longitude.textContent = res.longitude;
       time.textContent = res.time
+
+      info.setAttribute('style', 'display:flex')
     }
 
-    info.setAttribute('style', 'display:flex')
     })
   })
 
